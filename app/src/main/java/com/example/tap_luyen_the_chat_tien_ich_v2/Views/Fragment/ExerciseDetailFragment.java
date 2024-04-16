@@ -128,12 +128,11 @@ public class ExerciseDetailFragment extends Fragment {
             player.release();
         }
     }
-    // Trung Yêu Hương
     TextView txtMessage;
     private void showPopup(String message) {
         LayoutInflater inflater = getLayoutInflater();
         View popupView = inflater.inflate(R.layout.popup_notification, null);
-        txtMessage = popupView.findViewById(R.id.txtMessage);
+        txtMessage = popupView.findViewById(R.id.txtCurrentTemp);
         txtMessage.setText(message);
         // Tạo PopupWindow
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;

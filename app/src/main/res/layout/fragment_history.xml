@@ -26,7 +26,7 @@
         android:id="@+id/tvEmptyView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bạn chưa có lần tập nào được ghi lại!"
+        android:text="You don't have any recorded workouts yet!"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

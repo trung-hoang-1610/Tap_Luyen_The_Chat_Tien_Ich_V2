@@ -7,6 +7,15 @@
     android:background="@color/black_overlay">
 
 
+    <FrameLayout
+        android:id="@+id/overlayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+
+    </FrameLayout>
     <ImageView
         android:id="@+id/btnNotification"
         android:layout_width="38dp"

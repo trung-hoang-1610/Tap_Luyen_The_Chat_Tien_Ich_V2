@@ -148,14 +148,20 @@ public class PlansListFragment extends Fragment{
         public void onSensorChanged(SensorEvent event) {
 
             float temperature = event.values[0];
-            String message = "\nNhiệt độ hiện tại: " + temperature +"℃" +"\nGợi ý tập luyện: ";
-            if (temperature > 20) {
+
+            if (temperature >= 30) {
                 // Nhiệt độ lớn hơn 20 độ, hiển thị PopupWindow gợi ý mặc áo ngắn
-                showPopup(message +"Tránh tập luyện ngoài trời vào giờ nắng gắt. Hãy tập trong nhà hoặc tại các phòng tập có nhiệt độ mát mẻ!");
+
+                showPopup("Thời tiết hôm nay khá nóng \uD83C\uDF24 \n\nHãy tập luyện nhẹ nhàng và nhớ uống nước đầy đủ để giữ cơ thể mát mẻ và tránh mất nước nhé!", temperature);
                 sensorManager.unregisterListener(sensorEventListener);
-            } else {
+            } else if(temperature>=20 && temperature <30){
+                showPopup("Thời tiết hôm nay khá mát mẻ ☁ \n\nBạn có thể tập luyện một cách thoải mái. Hãy đảm bảo thực hiện đủ bài tập và duy trì chế độ dinh dưỡng cân đối!", temperature);
+                sensorManager.unregisterListener(sensorEventListener);
+            }
+
+            else{
                 // Nhiệt độ nhỏ hơn hoặc bằng 20 độ, hiển thị PopupWindow gợi ý mặc áo ấm
-                showPopup(message + "Trới khá lạnh, hãy cân nhắc sử dụng thêm đồ ấm và khởi động kỹ khi tập luyện ngoài trời và hãy chú ý giữ cơ thể ấm khi thực hiện các bài tập!");
+                showPopup("Hôm nay thời tiết khá lạnh ❄ \n\nHãy chuẩn bị các bài tập giữ ấm cơ thể và đề cao việc mặc đồ ấm khi tập luyện. Đừng quên làm bài tập khởi động kỹ lưỡng trước khi bắt đầu nhé!", temperature);
                 sensorManager.unregisterListener(sensorEventListener);
             }
         }
@@ -165,52 +171,48 @@ public class PlansListFragment extends Fragment{
             // Không cần xử lý ở đây
         }
     };
-    TextView txtMessage;
-    private void showPopup(String message) {
+    TextView txtCurrentTemp;
+    TextView txtSuggest;
+    TextView btnGotIt;
+    private void showPopup(String message, float temperature) {
         LayoutInflater inflater = getLayoutInflater();
         View popupView = inflater.inflate(R.layout.popup_notification, null);
-        txtMessage = popupView.findViewById(R.id.txtMessage);
-        txtMessage.setText(message);
+        txtSuggest = popupView.findViewById(R.id.txtSuggest);
+        txtCurrentTemp = popupView.findViewById(R.id.txtCurrentTemp);
+        btnGotIt = popupView.findViewById(R.id.btnGotIt);
+        View overlayLayout = mView.findViewById(R.id.overlayLayout);
+        txtSuggest.setText(message);
+        txtCurrentTemp.setText("Nhiệt độ hiện tại: " +temperature +"°C" +"\uD83C\uDF21");
+
         // Tạo PopupWindow
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
         boolean focusable = true; // Cho phép PopupWindow nhận sự kiện touch bên ngoài để đóng cửa sổ
         popupWindow = new PopupWindow(popupView, width, height, focusable);
 
         // Cấu hình PopupWindow
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popupWindow.setElevation(20);
-        // Tính toán vị trí của Button "notification" trên màn hình
-        int[] location = new int[2];
-        notificationButton.getLocationOnScreen(location);
-        int x = location[0];
-        int y = location[1];
-
-        // Lấy kích thước của Button
-        int buttonWidth = notificationButton.getWidth();
-        int buttonHeight = notificationButton.getHeight();
-
-        // Lấy kích thước của PopupWindow
-        popupView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        int popupWidth = popupView.getMeasuredWidth();
-        int popupHeight = popupView.getMeasuredHeight();
-
-        // Tính toán vị trí x, y của PopupWindow
-        int popupX = x + (buttonWidth - popupWidth) / 2;
-        int popupY = y + buttonHeight;
 
         // Hiển thị PopupWindow ở vị trí mong muốn
-        popupWindow.showAtLocation(notificationButton, Gravity.START | Gravity.TOP, popupX, popupY);
-
+        popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, -100);
         // Đặt sự kiện để đóng PopupWindow khi click bên ngoài
         popupView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_OUTSIDE) {
                     popupWindow.dismiss();
+
                     return true;
                 }
                 return false;
+            }
+        });
+        btnGotIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+
             }
         });
     }
