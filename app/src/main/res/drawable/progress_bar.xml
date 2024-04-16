@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/gray" />
+            <corners android:radius="20dp" /> <!-- Điều chỉnh bán kính góc bo tròn -->
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="@color/black" />
+                <corners android:radius="20dp" /> <!-- Điều chỉnh bán kính góc bo tròn -->
+                <size android:height="10dp" /> <!-- Điều chỉnh chiều dày của ProgressBar -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

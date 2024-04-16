@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_overlay"
+    android:id="@+id/fragment_container">
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/background01">
+
+        <TextView
+            android:id="@+id/txtplanName"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/font1"
+            android:hint="this is the place where contain the plan name"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/totalDayFinished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/28 Days Finished"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/percentFinished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        tools:ignore="MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="382dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="30dp"
+        android:progressDrawable="@drawable/progress_bar"
+        android:progressTint="@color/springGreen"
+        app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+        app:layout_constraintStart_toStartOf="@+id/linear_layout"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="441dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        tools:ignore="MissingConstraints,ScrollViewCount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="WEEK 1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <Button
+                    android:id="@+id/btnDay1"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/springGreen"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay2"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay3"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay4"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="4"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnDay5"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="5"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay6"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="6"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay5"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay2"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <Button
+                    android:id="@+id/btnDay7"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="7"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay6"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay3"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnContinue1"
+                    android:layout_width="194dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/springGreen"
+                    android:text="START"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="97dp"
+                    tools:layout_editor_absoluteY="70dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtWeek2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="WEEK 2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout1"
+                tools:ignore="NotSibling" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:background="@drawable/rounded_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWeek2"
+                tools:layout_editor_absoluteY="37dp">
+                <Button
+                    android:id="@+id/btnDay8"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay9"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay10"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay9"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay11"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="4"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnDay12"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="5"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay8"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay13"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="6"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay12"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay9"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <Button
+                    android:id="@+id/btnDay14"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="7"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay13"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay10"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnContinue2"
+                    android:layout_width="194dp"
+                    android:layout_height="41dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/springGreen"
+                    android:text="CONTINUE"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtWeek3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="WEEK 3"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                tools:ignore="NotSibling" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:background="@drawable/rounded_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWeek3"
+                tools:layout_editor_absoluteY="37dp">
+
+                <Button
+                    android:id="@+id/btnDay15"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay16"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay15"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay17"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay16"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay18"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="4"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay17"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnDay19"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="5"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay15"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay20"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="6"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay19"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay16"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <Button
+                    android:id="@+id/btnDay21"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="7"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay20"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay17"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+                <Button
+                    android:id="@+id/btnContinue3"
+                    android:layout_width="194dp"
+                    android:layout_height="41dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/springGreen"
+                    android:text="CONTINUE"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="405dp"
+                    android:layout_height="682dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtWeek4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="WEEK 4"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+                app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                tools:ignore="NotSibling" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:background="@drawable/rounded_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.855"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWeek4"
+                tools:layout_editor_absoluteY="37dp">
+
+                <Button
+                    android:id="@+id/btnDay22"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay23"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="2"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay22"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay24"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="3"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay23"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnDay25"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="4"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+                <Button
+                    android:id="@+id/btnDay26"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="5"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay22"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <Button
+                    android:id="@+id/btnDay27"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="6"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay26"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay23"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+
+
+                <Button
+                    android:id="@+id/btnDay28"
+                    android:layout_width="48dp"
+                    android:layout_height="54dp"
+                    android:backgroundTint="@color/gainsboro"
+                    android:padding="10dp"
+                    android:text="7"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/btnDay27"
+                    app:layout_constraintTop_toBottomOf="@+id/btnDay24"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"/>
+                <Button
+                    android:id="@+id/btnContinue4"
+                    android:layout_width="194dp"
+                    android:layout_height="41dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/springGreen"
+                    android:text="CONTINUE"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

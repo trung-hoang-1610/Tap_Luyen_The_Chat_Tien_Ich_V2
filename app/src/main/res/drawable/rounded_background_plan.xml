@@ -1,0 +1,11 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="40dp" /> <!-- Định dạng bán kính cong, thay đổi giá trị để đổi bán kính -->
+    <solid android:color="@android:color/transparent" /> <!-- Màu nền trong suốt -->
+
+    <!-- Đặt hình ảnh làm nền -->
+    <bitmap
+        android:src="@drawable/background_plan"
+        android:gravity="fill" /> <!-- Có thể thay đổi giá trị gravity để căn chỉnh hình ảnh -->
+
+</shape>

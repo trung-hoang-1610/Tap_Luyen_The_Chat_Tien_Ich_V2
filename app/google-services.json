@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1062601125777",
+    "firebase_url": "https://tap-luyen-the-chat-tien-ich-default-rtdb.firebaseio.com",
+    "project_id": "tap-luyen-the-chat-tien-ich",
+    "storage_bucket": "tap-luyen-the-chat-tien-ich.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062601125777:android:73994f3f52dcb11804b430",
+        "android_client_info": {
+          "package_name": "com.example.tap_luyen_the_chat_tien_ich"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAmAGcQEBUwS4I2KzoG1Dbq8HftO7Ilbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062601125777:android:17c24700fdf16f2504b430",
+        "android_client_info": {
+          "package_name": "com.example.tap_luyen_the_chat_tien_ich_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAmAGcQEBUwS4I2KzoG1Dbq8HftO7Ilbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

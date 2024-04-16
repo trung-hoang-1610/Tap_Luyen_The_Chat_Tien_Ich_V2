@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/fragment_day_detail">
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="404dp"
+        android:layout_height="121dp"
+        android:background="@drawable/background01"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="407dp"
+        android:layout_height="475dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints,NotSibling,ScrollViewCount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtplanName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="This is plan name"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:layout_editor_absoluteX="0dp" />-->
+
+            <TextView
+                android:id="@+id/txtDayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="day name"
+                android:textSize="18dp"
+                app:layout_goneMarginTop="10dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/constraintLayout1"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/txtDayLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level: "
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/txtDayName" />
+
+
+            <TextView
+                android:id="@+id/txtExercises"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exercises: "
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/txtDayLevel" />
+
+<!--            <ListView-->
+<!--                android:id="@+id/lst"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="400dp"-->
+<!--                android:padding="20dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtExercises"-->
+<!--                app:layout_constraintVertical_bias="0.0"-->
+<!--                tools:layout_editor_absoluteX="0dp" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcViewExercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtExercises"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="0dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="202dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@color/springGreen"
+        android:text="Start"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="639dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
